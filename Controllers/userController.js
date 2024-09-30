@@ -29,8 +29,27 @@ exports.register = async (req, res) => {
         res.status(401).json({ message: err });
     }
 
+}
 
 
+exports.login = async (req, res) => {
+    console.log("Inside loginController");
+    const { email, password } = req.body
+    console.log( email, password);
+
+    try {
+        //1 Check email and password in mongodb (model)
+        const existingUser = await users.findOne({email,password})
+        if (existingUser) {
+            res.status(200).json({user: existingUser})
+        }
+        else {
+            res.status(404).json("Invalid email or password")
+        }
+    }
+    catch (err) {
+        res.status(401).json({ message: err });
+    }
 }
 
 

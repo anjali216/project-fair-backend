@@ -11,4 +11,9 @@ const router = express.Router()
 //1 Register route : http://localhost:3000/api/register
 router.post('/api/register',userController.register)
 
+
+//2 Login route : http://localhost:3000/api/login
+router.post('/api/login',userController.login)
+
+
 module.exports =router
