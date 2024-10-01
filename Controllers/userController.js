@@ -2,7 +2,7 @@
 //username, email,password
 
 const users = require('../Models/userSchema')
-const jwt=require('jsonwebtoken')
+//const jwt=require('jsonwebtoken')
 
 exports.register = async (req, res) => {
     console.log("Inside registerController");
@@ -43,7 +43,7 @@ exports.login = async (req, res) => {
         const existingUser = await users.findOne({email,password})
         if (existingUser) {
             //tokengeneration
-            const token = jwt.sign({userId:existingUser._id},process.env.JWT_key)
+            //const token = jwt.sign({userId:existingUser._id},process.env.JWT_key)
             res.status(200).json({user: existingUser})
         }
         else {
