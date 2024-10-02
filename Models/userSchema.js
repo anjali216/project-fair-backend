@@ -1,18 +1,18 @@
-const mongoose =require ('mongoose');
+const mongoose = require('mongoose');
 
 //1 Create a schema and a model for users
 const userSchema = new mongoose.Schema({
     username : {
         type:String,
-        required:true
+        required: true
     },
-    email: {
+    email : {
         type:String,
         required: true
     },
     password:{
         type:String,
-        required:true
+        required: true
     },
     github:{
         type:String,
@@ -24,10 +24,6 @@ const userSchema = new mongoose.Schema({
         type:String,
     }
 })
-
-//model creation 
-const users = mongoose.model('users',userSchema)
-module.exports =users
-
-
-//This is exported to userController
+//model creation (model = collection in db)
+const users = mongoose.model('users',userSchema);
+module.exports = users;

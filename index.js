@@ -30,7 +30,8 @@ pfserver.listen(PORT,(req,res)=>{
     console.log(("pfServer  started at port" + PORT));
 })
 
-//8 Define client request
+//8 Define client request 
 pfserver.get('/',(req,res)=>{
     res.status(200).send(`<h1>Project Fair Server started... Waiting for the client request...</h1>`)
+   
 })
