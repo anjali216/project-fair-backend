@@ -16,7 +16,7 @@ exports.register = async (req, res) => {
             res.status(401).json("User already registered...")
         }
         else {
-            //add new user to dadatabase
+            //add new user to database
             const newUser = new users({
                 username, email, password, github: "", linkedin: "", profilePic: ""
             })
