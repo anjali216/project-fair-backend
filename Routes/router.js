@@ -5,6 +5,8 @@ const express= require('express')
 const userController = require('../Controllers/userController')
 
 const projectController =require('../Controllers/projectController')
+const multerConfig = require('../MiddleWares/multerMiddleware')
+const jwtMiddleware = require('../MiddleWares/jwtMiddleware')
 
 //2 Create Router from express
 const router = express.Router()
@@ -17,6 +19,6 @@ router.post('/api/register',userController.register)
 router.post('/api/login',userController.login)
 
  //3 add projects route 
- router.post('/api/addProject',projectController.addProject)
+ router.post('/api/addProject',jwtMiddleware,multerConfig.single('projectImg'),projectController.addProject)
 
 module.exports =router

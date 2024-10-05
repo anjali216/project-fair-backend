@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken')
+
 const jwtMiddleware=(req,res,next)=>{
     console.log("Inside the jwtmiddleware");
     //get the token from the request
