@@ -18,7 +18,13 @@ router.post('/api/register',userController.register)
 //2 Login route : http://localhost:3000/api/login
 router.post('/api/login',userController.login)
 
- //3 add projects route 
- router.post('/api/addProject',jwtMiddleware,multerConfig.single('projectImg'),projectController.addProject)
+//3 add projects route 
+router.post('/api/addProject',jwtMiddleware,multerConfig.single('projectImg'),projectController.addProject)
+
+//4 get all project - find()
+
+//5 get all projects of particular user - find({userId})
+
+//6 get home project(3) find.limit(3)
 
 module.exports =router
