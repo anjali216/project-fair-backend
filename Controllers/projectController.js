@@ -31,7 +31,7 @@ exports.getAllProjects =async (req,res)=>{
         res.status(200).json(getAllProjects)
     }
    catch(error){
-         res.status(200).json("Server error" +error)
+         res.status(500).json("Server error" +error)
     }
     
 }
@@ -45,7 +45,21 @@ exports.getuserProjects =async (req,res)=>{
            res.status(200).json(getuserProjects)
        }
       catch(error){
-            res.status(200).json("Server error" +error)
+            res.status(500).json("Server error" +error)
        }
-       
-   }
+
+}
+
+exports.getHomeProjects =async (req,res)=>{
+    
+    console.log("Inside getHomeProjects");
+    
+       try{
+           const getHomeProjects =await projects.find().limit(3)
+           res.status(200).json(getHomeProjects)
+       }
+      catch(error){
+            res.status(500).json("Server error" +error)
+       }
+
+}

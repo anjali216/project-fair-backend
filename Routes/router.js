@@ -26,9 +26,9 @@ router.post('/api/addProject',jwtMiddleware,multerConfig.single('projectImg'),pr
 router.get('/api/getAllProjects',jwtMiddleware,projectController.getAllProjects)
 
 //5 get all projects of particular user - find({userId})
-router.get('/api/UserProjects',jwtMiddleware,projectController.getuserProjects)
+router.get('/api/getUserProjects',jwtMiddleware,projectController.getuserProjects)
 
 //6 get home project(3) find.limit(3)
-
+router.get('/api/getHomeProjects',jwtMiddleware,projectController.getHomeProjects)
 
 module.exports =router
