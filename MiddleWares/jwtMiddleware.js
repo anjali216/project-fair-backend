@@ -6,8 +6,10 @@ const jwtMiddleware=(req,res,next)=>{
     let token= req.headers['authorization'].slice(7)
     console.log(token);
     //verify the token
+    
     const jwtResponse=jwt.verify(token,'superkey2024')
     console.log(jwtResponse);
+    req.payload=jwtResponse.userId
 
     next()
     

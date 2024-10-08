@@ -22,3 +22,16 @@ exports.addProject=async(req,res)=>{
         res.status(500).json("Server error"+error)
     }
 }
+
+
+ exports.getAllProjects =async (req,res)=>{
+    console.log("Inside getAllProjects");
+          try{
+        const getAllProjects =await projects.find()
+        res.status(200).json(getAllProjects)
+      }
+   catch(error){
+         res.status(200).json("Server error" +error)
+     }
+    
+   }
