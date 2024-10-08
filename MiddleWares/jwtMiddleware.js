@@ -9,9 +9,11 @@ const jwtMiddleware=(req,res,next)=>{
     
     const jwtResponse=jwt.verify(token,'superkey2024')
     console.log(jwtResponse);
+    
+    console.log(jwtResponse.userId);
     req.payload=jwtResponse.userId
 
-    next()
+    next();
     
 }
 

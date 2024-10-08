@@ -35,3 +35,17 @@ exports.getAllProjects =async (req,res)=>{
     }
     
 }
+
+exports.getuserProjects =async (req,res)=>{
+    
+    console.log("Inside getUserProjects");
+    const userId =req.payload
+       try{
+           const getuserProjects =await projects.find({userId})
+           res.status(200).json(getuserProjects)
+       }
+      catch(error){
+            res.status(200).json("Server error" +error)
+       }
+       
+   }
