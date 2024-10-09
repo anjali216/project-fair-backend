@@ -29,6 +29,6 @@ router.get('/api/getAllProjects',jwtMiddleware,projectController.getAllProjects)
 router.get('/api/getUserProjects',jwtMiddleware,projectController.getuserProjects)
 
 //6 get home project(3) find.limit(3)
-router.get('/api/getHomeProjects',jwtMiddleware,projectController.getHomeProjects)
+router.get('/api/getHomeProjects',projectController.getHomeProjects)
 
 module.exports =router
