@@ -21,6 +21,8 @@ pfserver.use(cors())
 pfserver.use(express.json())
 pfserver.use(router)
 
+ pfserver.use ('/uploads',express.static('./uploads'))
+ 
 //6 Define port number
 const PORT = 3000 || process.env.PORT
 
