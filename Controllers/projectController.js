@@ -63,3 +63,32 @@ exports.getHomeProjects =async (req,res)=>{
        }
 
 }
+
+
+//edit project
+exports.editProject =async(req,res)=>{
+    console.log("inside editProject");
+    const{title,language,website,github,projectImg}=req.body
+ console.log(title,language,website,github,projectImg);   
+    const uploadImg = req.file? req.file.filename:projectImg
+    const userId = req.payload
+    const {projectId} =req.params
+  
+  
+    try{
+        console.log("Inside try");
+        
+   const updateProject = await projects.findByIdAndUpdate({_id:projectId},{title:title,language:language,website:website,github:github,userId:userId,projectImg:uploadImg})
+   console.log(updateProject);
+   
+   await updateProject.save()
+   res.status(200).json(updateProject)
+
+    }
+
+    catch(error){
+    res.status(401).json(error)
+
+    }
+
+}

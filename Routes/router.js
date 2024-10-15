@@ -31,4 +31,7 @@ router.get('/api/getUserProjects',jwtMiddleware,projectController.getuserProject
 //6 get home project(3) find.limit(3)
 router.get('/api/getHomeProjects',projectController.getHomeProjects)
 
+//update
+router.put('/api/update/:projectId',jwtMiddleware,multerConfig.single('projectImg'),projectController.editProject)
+
 module.exports =router
