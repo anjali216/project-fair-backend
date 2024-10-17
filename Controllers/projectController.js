@@ -68,8 +68,8 @@ exports.getHomeProjects =async (req,res)=>{
 //edit project
 exports.editProject =async(req,res)=>{
     console.log("inside editProject");
-    const{title,language,website,github,projectImg}=req.body
- console.log(title,language,website,github,projectImg);   
+    const{title,language,website,github,projectImg,overview}=req.body
+ console.log(title,language,website,github,projectImg,overview);   
     const uploadImg = req.file? req.file.filename:projectImg
     const userId = req.payload
     const {projectId} =req.params
