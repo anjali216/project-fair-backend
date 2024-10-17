@@ -92,3 +92,21 @@ exports.editProject =async(req,res)=>{
     }
 
 }
+
+//DELETE
+
+exports.deleteProject =async(req,res)=>{
+    console.log("inside deleteProject");
+    const {projectId} =req.params
+  
+    try{  
+    await projects.findByIdAndDelete({_id:projectId})
+   res.status(200).json("Project deleted Successfully")
+    }
+
+    catch(error){
+    res.status(401).json(error)
+
+    }
+
+}

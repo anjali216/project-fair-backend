@@ -26,6 +26,10 @@ const projectSchema = new mongoose.Schema({
     projectImg:{
         type:String,
         required:true
+    },
+    overview:{
+        type:String,
+        required:true
     }
 
 })
